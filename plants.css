@@ -9,6 +9,11 @@ body{
     color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 20px;
+    transition: transform 0.45s ease;
+}
+
+#Title:hover{
+    transform: rotate(1.5deg);
 }
 
 
@@ -64,6 +69,6 @@ body{
     font-size: 45px;
     text-align: center;
     color: white;
-    background-color:#583a21;
+    background: linear-gradient(#583a21, #462e1b );
     box-shadow: 6px 2px 15px rgba(0, 0, 0, 0.5);
 }
