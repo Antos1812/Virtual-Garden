@@ -1,0 +1,46 @@
+
+body{
+    background-image: linear-gradient(#382d1c, #52432e);
+}
+
+#Title{
+    font-family: 'sodoSans', sans-serif;
+    font-size: 38px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+.plant-select{
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.plant{
+    width: 50px;
+    padding-left: 10px;
+    cursor:grab;
+}
+
+
+.Garden{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:45px;
+    padding: 30px;
+    background-color: brown;
+    border: 8px solid rgb(56, 25, 25);
+}
+
+.Garden > div {
+    width: 300px;
+    height: 180px;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 10px;
+}
