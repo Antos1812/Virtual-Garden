@@ -25,6 +25,12 @@ body{
     width: 50px;
     padding-left: 10px;
     cursor:grab;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.plant:hover{
+    transform: scale(1.1) rotate(2.5deg);
 }
 
 
@@ -33,14 +39,31 @@ body{
     grid-template-columns: auto auto auto auto;
     gap:45px;
     padding: 30px;
-    background-color: brown;
+    background-color: #382d1c;
     border: 8px solid rgb(56, 25, 25);
+    margin-top: 10px;
 }
 
 .Garden > div {
     width: 300px;
     height: 180px;
-    background-color: green;
+    background: radial-gradient(circle, #30a530, #277027 );
     border: 2px solid black;
     border-radius: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    transition: transform 0.27s ease, box-shadow 0.43s ease-in-out; 
+}
+
+.Garden >div:hover{
+    transform: scale(1.07) rotate(-1.4deg);
+    box-shadow: 9px 3px 20px rgba(0, 0, 0, 0.5);
+}
+
+.GardenText{
+    font-family: 'sodoSans', sans-serif;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    background-color:#583a21;
+    box-shadow: 6px 2px 15px rgba(0, 0, 0, 0.5);
 }
