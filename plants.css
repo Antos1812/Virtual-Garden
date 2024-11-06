@@ -47,6 +47,10 @@ body{
     box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.5);;
 }
 
+#plantGold{
+    display: none;
+}
+
 
 .Garden{
     display: grid;
