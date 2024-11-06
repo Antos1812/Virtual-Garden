@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let score = 0;
+    const scoreCounterDisplay = document.getElementById("scoreCounter");
+
     const plants = document.querySelectorAll(".plant");
     plants.forEach(plant => {
         plant.addEventListener('dragstart', (e) => {
@@ -27,7 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!plot.querySelector('img')) { // Sprawdź, czy nie ma już obrazka
                 plot.innerHTML = ''; // Czyść pole przed dodaniem nowej rośliny
                 plot.appendChild(plant); // Dodaj nową roślinę do pola
-            }
+                window.setInterval(function () {
+                    score += 1;
+                    scoreCounterDisplay.textContent = `Coins: ${score}`;
+                }, 1000);
+            };
         });
     });
 });
