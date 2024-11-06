@@ -1,9 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let score = 900;
+    let score = 0;
     const scoreCounterDisplay = document.getElementById("scoreCounter");
     const plantGoldElement = document.getElementById("plantGold");
-    let intervalId; 
-    let isIntervalRunning = false; 
+    let intervalId;
+    
+    //Garden boxes
+    const g2 = document.getElementById("garden2");
+    const g3 = document.getElementById("garden3");
+    const g4 = document.getElementById("garden4");
+    const g5 = document.getElementById("garden5");
+    const g6 = document.getElementById("garden6");
+    const g7 = document.getElementById("garden7");
+    const g8 = document.getElementById("garden8");
 
     const plants = document.querySelectorAll(".plant");
     plants.forEach(plant => {
@@ -26,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             plant.removeAttribute('draggable');
             plant.style.cursor = 'default';
-            plant.style.width = '50px'; 
+            plant.style.width = '50'; 
             plant.style.height = 'auto'; 
 
             
@@ -34,30 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 plot.innerHTML = ''; 
                 plot.appendChild(plant); 
 
-                
-                if (!isIntervalRunning) {
-                    isIntervalRunning = true;
-                    intervalId = setInterval(() => {
-                        let activePlantsInGarden = 0;
+                function updateScore(){
+                    score += 1;
+                    scoreCounterDisplay.textContent = `Coins: ${score}`;
 
-                        
-                        Array.from(gardenPlots).forEach(plot => {
-                            if (plot.querySelector('img')) {
-                                activePlantsInGarden++;
-                            }
-                        });
+                    if(score >= 10 && !g2.classList.contains('visible')){
+                        g2.classList.add('visible');
+                    }
 
-                        
-                        if (activePlantsInGarden > 0) {
-                            score += activePlantsInGarden;
-                            scoreCounterDisplay.textContent = `Coins: ${score}`;
-                        }
+                    if(score >= 30 && !g3.classList.contains('visible')){
+                        g3.classList.add('visible');
+                    }
+                    if(g3.classList.contains('visible')){
+                        score += 2;
+                        scoreCounterDisplay.textContent = `Coins: ${score}`;
+                    }
 
-                        if (score >= 1000) {
-                            plantGoldElement.style.display = "block";
-                        }
-                    }, 1000);
+                    if(score >= 100 && !g4.classList.contains('visible')){
+                        g4.classList.add('visible');
+                    }
+                    if(g4.classList.contains('visible')){
+                        score += 3;
+                        scoreCounterDisplay.textContent = `Coins: ${score}`;
+                    }
+            
+                    if(score >= 1000 && !plantGoldElement.classList.contains('visible')){
+                        plantGoldElement.classList.add('visible');
+                    }
                 }
+
+                if (!intervalId){
+                    intervalId = setInterval(updateScore, 500);
+                }
+                updateScore()
             }
         });
     });
