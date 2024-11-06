@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let score = 0;
+    let score = 900;
     const scoreCounterDisplay = document.getElementById("scoreCounter");
     const plantGoldElement = document.getElementById("plantGold");
     let intervalId;
