@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let score = 0;
+    let score = 900;
     const scoreCounterDisplay = document.getElementById("scoreCounter");
+    const plantGoldElement = document.getElementById("plantGold");
+    let intervalId; 
+    let isIntervalRunning = false; 
 
     const plants = document.querySelectorAll(".plant");
     plants.forEach(plant => {
@@ -23,18 +26,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
             plant.removeAttribute('draggable');
             plant.style.cursor = 'default';
-            plant.style.width = '50'; // Ustaw szerokość na 100%
-            plant.style.height = 'auto'; // Ustaw wysokość na auto, aby zachować proporcje
+            plant.style.width = '50px'; 
+            plant.style.height = 'auto'; 
 
-            // Dodanie rośliny do pola
-            if (!plot.querySelector('img')) { // Sprawdź, czy nie ma już obrazka
-                plot.innerHTML = ''; // Czyść pole przed dodaniem nowej rośliny
-                plot.appendChild(plant); // Dodaj nową roślinę do pola
-                window.setInterval(function () {
-                    score += 1;
-                    scoreCounterDisplay.textContent = `Coins: ${score}`;
-                }, 1000);
-            };
+            
+            if (!plot.querySelector('img')) { 
+                plot.innerHTML = ''; 
+                plot.appendChild(plant); 
+
+                
+                if (!isIntervalRunning) {
+                    isIntervalRunning = true;
+                    intervalId = setInterval(() => {
+                        let activePlantsInGarden = 0;
+
+                        
+                        Array.from(gardenPlots).forEach(plot => {
+                            if (plot.querySelector('img')) {
+                                activePlantsInGarden++;
+                            }
+                        });
+
+                        
+                        if (activePlantsInGarden > 0) {
+                            score += activePlantsInGarden;
+                            scoreCounterDisplay.textContent = `Coins: ${score}`;
+                        }
+
+                        if (score >= 1000) {
+                            plantGoldElement.style.display = "block";
+                        }
+                    }, 1000);
+                }
+            }
         });
     });
 });
