@@ -47,15 +47,14 @@ body{
     box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.5);;
 }
 
-#plantGold{
-    display: none;
-}
+#plantGold{display: none;}
+#plantGold.visible{display: block;}
 
 
 .Garden{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap:45px;
+    gap:15px;
     padding: 30px;
     background-color: #382d1c;
     border: 8px solid rgb(56, 25, 25);
@@ -85,3 +84,19 @@ body{
     background: linear-gradient(#583a21, #462e1b );
     box-shadow: 6px 2px 15px rgba(0, 0, 0, 0.5);
 }
+
+
+#garden2{display:none;}
+#garden2.visible{display:block;}
+#garden3{display:none;}
+#garden3.visible{display:block;}
+#garden4{display:none;}
+#garden4.visible{display:block;}
+#garden5{display:none;}
+#garden5.visible{display:block;}
+#garden6{display:none;}
+#garden6.visible{display:block;}
+#garden7{display:none;}
+#garden7.visible{display:block;}
+#garden8{display:none;}
+#garden8.visible{display:block;}
