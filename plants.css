@@ -16,7 +16,14 @@ body{
     transform: rotate(1.5deg);
 }
 
-
+#scoreCounter{
+    font-family: 'sodoSans', sans-serif;
+    font-size:28px;
+    color: gold;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 
 .plant-select{
