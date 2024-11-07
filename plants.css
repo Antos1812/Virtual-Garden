@@ -85,7 +85,7 @@ body{
     box-shadow: 6px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
-
+/*List of all garden boxes*/
 #garden2{display:none;}
 #garden2.visible{display:block;}
 #garden3{display:none;}
@@ -100,3 +100,23 @@ body{
 #garden7.visible{display:block;}
 #garden8{display:none;}
 #garden8.visible{display:block;}
+
+.ThePath{margin-top: 100px;}
+
+#PathText{
+    font-family: 'sodoSans', sans-serif;
+    font-size: 26px;
+    color:rgb(224, 204, 110);
+    margin-left: 3px;
+}
+
+.GardenList{
+    font-family: 'sodoSans', sans-serif;
+    font-size:18px;
+    color:rgb(240, 214, 99);
+}
+
+ol li {
+    margin-left: 5px;
+    padding: 5px;
+}
