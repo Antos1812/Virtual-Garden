@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let score = 900;
+    let score = 0;
     const scoreCounterDisplay = document.getElementById("scoreCounter");
     const plantGoldElement = document.getElementById("plantGold");
     let intervalId;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         g2.classList.add('visible');
                     }
 
-                    if(score >= 30 && !g3.classList.contains('visible')){
+                    if(score >= 50 && !g3.classList.contains('visible')){
                         g3.classList.add('visible');
                     }
                     if(g3.classList.contains('visible')){
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         scoreCounterDisplay.textContent = `Coins: ${score}`;
                     }
 
-                    if(score >= 100 && !g4.classList.contains('visible')){
+                    if(score >= 200 && !g4.classList.contains('visible')){
                         g4.classList.add('visible');
                     }
                     if(g4.classList.contains('visible')){
